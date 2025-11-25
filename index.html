@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arewa Delights — Kaduna</title>
+  <link rel="stylesheet" href="arewa.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="logo.jpg" alt="logo" class="logo" />
+      <span class="title">Arewa Delights <small>Kaduna</small></span>
+    </div>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="#map">📍</a>
+      <button id="theme-toggle" title="Toggle Theme">🌙</button>
+      <button id="cart-button" aria-label="Cart">🛒 <span id="cart-count">0</span></button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-inner fade-in">
+      <h1>Authentic Northern Nigerian Cuisine</h1>
+      <p>Rich flavors from Arewa — Tuwo, Miyan Kuka, Suya, and more. Freshly made and delivered across Kaduna.</p>
+      <div class="hero-actions">
+        <input type="text" id="location" placeholder="Enter your location in Kaduna" />
+        <button class="primary" id="find-food">order now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="menu-section fade-in">
+    <h2>Our Menu</h2>
+    <div class="menu-grid" id="menu-grid">
+      <article class="menu-card" data-name="Tuwo Shinkafa" data-price="1500">
+        <img src="tuwo miyan kuka.jpg" alt="Tuwo Shinkafa" class="food-img" />
+        <h3>Tuwo Shinkafa with Miyan Kuka</h3>
+        <p>Traditional rice tuwo with baobab leaf soup.</p>
+        <div class="card-footer">
+          <span class="price">₦1,500</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="menu-card" data-name="Kunun Aya" data-price="1200">
+        <img src="kunun aya.jpg" alt="Kunun Aya" class="food-img" />
+        <h3>Chilled Kunun Aya</h3>
+        <p>Refreshing tigernut drink served cold.</p>
+        <div class="card-footer">
+          <span class="price">₦1,200</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="menu-card" data-name="Suya" data-price="2000">
+        <img src="tsire.jpg" alt="Suya" class="food-img" />
+        <h3>Suya (Beef)</h3>
+        <p>Spicy grilled beef skewers with yaji spice.</p>
+        <div class="card-footer">
+          <span class="price">₦2,000</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="menu-card" data-name="Kilishi" data-price="3000">
+        <img src="mrb.jpg" alt="Kilishi" class="food-img" />
+        <h3>Kilishi</h3>
+        <p>Traditional dried spiced meat delicacy.</p>
+        <div class="card-footer">
+          <span class="price">₦3,000</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="menu-card" data-name="Jollof Rice" data-price="2500">
+        <img src="mixed rice.jpg" alt="Jollof Rice" class="food-img" />
+        <h3>Jollof Rice with Chicken</h3>
+        <p>Spiced rice with tender chicken pieces.</p>
+        <div class="card-footer">
+          <span class="price">₦2,500</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="menu-card" data-name="Zobo Drink" data-price="800">
+        <img src="chilled zobo.jpg" alt="Zobo Drink" class="food-img" />
+        <h3>Chilled Zobo Drink</h3>
+        <p>Hibiscus flower drink served cold.</p>
+        <div class="card-footer">
+          <span class="price">₦800</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="menu-card" data-name="Dan Wake" data-price="1000">
+        <img src="danwake.jpg" alt="Dan Wake" class="food-img" />
+        <h3>Dan Wake with Miyan Taushe</h3>
+        <p>Bean dumplings in pumpkin seed soup.</p>
+        <div class="card-footer">
+          <span class="price">₦1,000</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="menu-card" data-name="Fura da Nono" data-price="1500">
+        <img src="fura da nono.jpg" alt="Fura da Nono" class="food-img" />
+        <h3>Fura da Nono</h3>
+        <p>Millet balls in fermented milk drink.</p>
+        <div class="card-footer">
+          <span class="price">₦1,500</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="menu-card" data-name="dambun nama" data-price="1800">
+        <img src="dambun nama.jpg" alt="dambun nama" class="food-img" />
+        <h3>Dambun Nama</h3>
+        <p> Spicy dried meat strips, a perfect snack or side dish.</p>
+        <div class="card-footer">
+          <span class="price">₦1,800</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="menu-card" data-name="fried rice" data-price="2000">
+        <img src="fried rice.jpg" alt="fried rice" class="food-img" />
+        <h3>Fried Rice</h3>
+        <p>A colorful mix of rice with vegetables and spices, served with chicken or beef.</p>
+        <div class="card-footer">
+          <span class="price">₦2,000</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="menu-card" data-name="soda" data-price="800">
+        <img src="sodas.jpg" alt="sodas" class="food-img" />
+        <h3>soda</h3>
+        <p>A selection of chilled soft drinks to complement your meal.</p>
+        <div class="card-footer">
+          <span class="price">₦800</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="menu-card" data-name="water" data-price="1000">
+        <img src="water.jpg" alt="water" class="food-img" />
+        <h3>Water</h3>
+        <p>Pure and refreshing water to keep you hydrated.</p>
+        <div class="card-footer">
+          <span class="price">₦500</span>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="reviews" class="testimonials fade-in">
+    <h2>Reviews</h2>
+    <div class="testimonials-container">
+      <div class="testimonial-card">
+        <img src="danwake.jpg" alt="5-star rating" class="stars" />
+        <p>"The best traditional meals I've had in a long time!"</p>
+        <h4>- Mamita</h4>
+      </div>
+      <div class="testimonial-card">
+        <img src="fried rice.jpg" alt="5-star rating" class="stars" />
+        <p>"Fast delivery and authentic taste. I love their Dan Wake!"</p>
+        <h4>- Huse</h4>
+      </div>
+      <div class="testimonial-card">
+        <img src="kunun aya.jpg" alt="5-star rating" class="stars" />
+        <p>"Their Kunun Aya is always refreshing and perfectly chilled."</p>
+        <h4>- Vaa</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section fade-in">
+    <div class="contact">
+      <h2>Contact Us</h2>
+      <ul>
+        <li>📱<strong>Instagram:</strong> <a href="https://instagram.com/beehech" target="_blank">@_beehech</a></li>
+        <li>☎<strong>WhatsApp:</strong> <a href="https://wa.me/2349032216177" target="_blank">+234 903 221 6177</a></li>
+        <li>🏡<strong>Address:</strong> Gwanja road, Malali</li>
+        <li>📧<strong>Email:</strong> <a href="mailto:hussainib237@gmail.com">hussainib237@gmail.com</a></li>
+      </ul>
+    </div>
+
+    <div class="add-review">
+      <h2>Leave a Review</h2>
+      <form id="review-form" class="form">
+        <input type="text" id="reviewer-name" placeholder="Your Name" required />
+        <textarea id="review-text" placeholder="Your Review" rows="4" required></textarea>
+        <button type="submit" class="primary">Submit Review</button>
+      </form>
+    </div>
+ </section>
+
+<section id="map" class="contact-card map-card">
+    <div class="map-card">
+      <h2>Find Us Here</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.634622878614!2d7.432529274936378!3d10.510632992861736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0a4b6f4b8d7b%3A0x5c8e4e8e8e8e8e8e!2sGwanja%20Rd%2C%20Kaduna!5e0!3m2!1sen!2sng!4v1701301234567" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Arewa Delights — Kaduna</p>
+    </footer>
+  </section>
+
+  <!-- CART MODAL -->
+  <div id="cart-modal" class="cart-modal hidden">
+    <div class="cart-content">
+      <h3>Your Cart</h3>
+      <ul id="cart-items"></ul>
+      <p class="total">Total: ₦<span id="cart-total">0</span></p>
+      <input type="text" id="delivery-location" placeholder="Enter delivery location..." />
+      <button id="checkout-btn" class="primary">Confirm Order</button>
+      <button id="close-cart" class="ghost">Close</button>
+    </div>
+  </div>
+
+  <script src="arewa.js"></script>
+</body>
+</html>
