@@ -1,0 +1,42 @@
+[debug] [2025-12-16T23:49:16.022Z] ----------------------------------------------------------------------
+[debug] [2025-12-16T23:49:16.024Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\amaam\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2025-12-16T23:49:16.024Z] CLI Version:   15.0.0
+[debug] [2025-12-16T23:49:16.024Z] Platform:      win32
+[debug] [2025-12-16T23:49:16.024Z] Node Version:  v24.11.1
+[debug] [2025-12-16T23:49:16.024Z] Time:          Wed Dec 17 2025 00:49:16 GMT+0100 (West Africa Standard Time)
+[debug] [2025-12-16T23:49:16.025Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-12-16T23:49:16.026Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  The Firebase CLI’s MCP server feature can optionally make use of Gemini in Firebase. Learn more about Gemini in Firebase and how it uses your data: https://firebase.google.com/docs/gemini-in-firebase#how-gemini-in-firebase-uses-your-data 
+[debug] [2025-12-16T23:49:16.830Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-12-16T23:49:16.830Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] 
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you. 
+[debug] [2025-12-17T11:17:06.373Z] ----------------------------------------------------------------------
+[debug] [2025-12-17T11:17:06.376Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\amaam\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2025-12-17T11:17:06.376Z] CLI Version:   15.0.0
+[debug] [2025-12-17T11:17:06.376Z] Platform:      win32
+[debug] [2025-12-17T11:17:06.376Z] Node Version:  v24.11.1
+[debug] [2025-12-17T11:17:06.377Z] Time:          Wed Dec 17 2025 12:17:06 GMT+0100 (West Africa Standard Time)
+[debug] [2025-12-17T11:17:06.377Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  The Firebase CLI’s MCP server feature can optionally make use of Gemini in Firebase. Learn more about Gemini in Firebase and how it uses your data: https://firebase.google.com/docs/gemini-in-firebase#how-gemini-in-firebase-uses-your-data 
+[debug] [2025-12-17T11:19:36.233Z] ----------------------------------------------------------------------
+[debug] [2025-12-17T11:19:36.235Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\amaam\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-12-17T11:19:36.235Z] CLI Version:   15.0.0
+[debug] [2025-12-17T11:19:36.235Z] Platform:      win32
+[debug] [2025-12-17T11:19:36.235Z] Node Version:  v24.11.1
+[debug] [2025-12-17T11:19:36.235Z] Time:          Wed Dec 17 2025 12:19:36 GMT+0100 (West Africa Standard Time)
+[debug] [2025-12-17T11:19:36.235Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\amaam\Documents\BH Project
+

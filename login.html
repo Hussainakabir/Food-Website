@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arewa Delights — Admin Portal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body class="bg">
+  <main class="container">
+    <div class="hero">
+      <div class="brand">
+        <div class="logo">AD</div>
+        <h1 class="title">Arewa Delights</h1>
+        <p class="subtitle">Admin Management Gateway • Kaduna</p>
+      </div>
+
+      <div class="hero-cards">
+        <section class="card auth-card glass">
+          <div class="card-head">
+            <h2><i class="fas fa-shield-alt"></i> Admin Login</h2>
+            <p class="muted">Access your dashboard to manage orders</p>
+          </div>
+
+          <div class="card-body">
+            <form id="signupForm" class="form" style="display: none;">
+              <input name="email" type="email" placeholder="New Admin Email" required />
+              <input name="password" type="password" placeholder="New Password" required />
+              <button class="btn btn-primary" type="submit">Create Admin</button>
+            </form>
+
+            <form id="loginForm" class="form modern-form">
+              <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input name="email" type="email" placeholder="Email Address" required />
+              </div>
+              <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input name="password" type="password" placeholder="Password" required />
+              </div>
+              <button class="btn btn-primary" type="submit">Sign In to Portal</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="card contact-card glass">
+          <div class="card-head">
+            <h2><i class="fas fa-headset"></i> Portal Support</h2>
+            <p class="muted">Direct line for technical inquiries</p>
+          </div>
+          <form id="contactForm" class="form contact-form modern-form">
+            <input name="name" type="text" placeholder="Full Name" required />
+            <input name="email" type="email" placeholder="Email" required />
+            <textarea name="message" placeholder="Message..." rows="3" required></textarea>
+            <button class="btn btn-accent" type="submit">Send Message</button>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Arewa Delights. Secure Admin Environment.</p>
+    </footer>
+  </main>
+</body>
+</html>

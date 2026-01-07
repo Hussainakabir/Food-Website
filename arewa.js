@@ -1,4 +1,5 @@
-// Theme toggle
+
+// THEME TOGGLE
 const toggle = document.getElementById("theme-toggle");
 const savedTheme = localStorage.getItem("theme");
 
@@ -15,7 +16,8 @@ toggle.addEventListener("click", () => {
   localStorage.setItem("theme", newTheme);
 });
 
-// Cart system
+
+// CART SYSTEM
 let cart = [];
 const cartCount = document.getElementById("cart-count");
 const cartModal = document.getElementById("cart-modal");
@@ -36,55 +38,124 @@ document.querySelectorAll(".add-btn").forEach((btn) => {
 });
 
 function updateCart() {
-  cartCount.textContent = cart.length;
-  cartItems.innerHTML = "";
-  let total = 0;
+  if (cartCount) cartCount.textContent = cart.length;
 
-  cart.forEach((item) => {
-    total += item.price;
-    const li = document.createElement("li");
-    li.textContent = `${item.name} - ₦${item.price}`;
-    cartItems.appendChild(li);
-  });
+  if (cartItems) {
+    cartItems.innerHTML = "";
+    let total = 0;
 
-  cartTotal.textContent = total;
+    cart.forEach((item) => {
+      total += item.price;
+      const li = document.createElement("li");
+      li.textContent = `${item.name} - ₦${item.price}`;
+      cartItems.appendChild(li);
+    });
+
+    if (cartTotal) cartTotal.textContent = total;
+  }
 }
 
-// Open/Close cart
-document.getElementById("cart-button").addEventListener("click", () => {
-  cartModal.classList.remove("hidden");
-});
 
-document.getElementById("close-cart").addEventListener("click", () => {
-  cartModal.classList.add("hidden");
-});
+// OPEN / CLOSE CART
+const cartButton = document.getElementById("cart-button");
+if (cartButton) {
+  cartButton.addEventListener("click", () => {
+    cartModal.classList.remove("hidden");
+  });
+}
 
-// Checkout
-document.getElementById("checkout-btn").addEventListener("click", () => {
-  const location = document.getElementById("delivery-location").value.trim();
-  if (!location) {
-    alert("Please enter a delivery location.");
-    return;
-  }
-
-  alert(`Order placed! Your food will be delivered to: ${location}`);
-  cart = [];
-  updateCart();
-  cartModal.classList.add("hidden");
-});
-
-// Footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+const closeCart = document.getElementById("close-cart");
+if (closeCart) {
+  closeCart.addEventListener("click", () => {
+    cartModal.classList.add("hidden");
+  });
+}
 
 
-// Reveal on scroll
-const revealElements = document.querySelectorAll('.reveal-up');
+// CHECKOUT → FIREBASE → WHATSAPP
+const checkoutBtn = document.getElementById("checkout-btn");
+
+if (checkoutBtn) {
+  checkoutBtn.addEventListener("click", async () => {
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    const locationInput = document.getElementById("delivery-location");
+    const location = locationInput.value.trim();
+
+    if (!location) {
+      alert("Please enter a delivery location.");
+      return;
+    }
+
+    const WHATSAPP_NUMBER = "2349032216177"; // ← change this
+    const orderId = "ORD-" + Date.now();
+
+    let total = 0;
+    cart.forEach(item => total += item.price);
+
+    // 1️⃣ SAVE ORDER TO FIRESTORE
+    try {
+      await db.collection("orders").add({
+        orderId,
+        items: cart,
+        total,
+        location,
+        status: "pending",
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+    } catch (err) {
+      alert("Failed to save order. Try again.");
+      console.error(err);
+      return;
+    }
+
+    // 2️⃣ BUILD WHATSAPP MESSAGE
+    let message = `🧾 *New Order*%0A`;
+    message += `*Order ID:* ${orderId}%0A%0A`;
+
+    cart.forEach((item, i) => {
+      message += `${i + 1}. ${item.name} - ₦${item.price}%0A`;
+    });
+
+    message += `%0A*Total:* ₦${total}%0A`;
+    message += `*Delivery Location:* ${location}%0A`;
+    message += `*Payment:* Pay on delivery`;
+
+    const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+
+    // 3️⃣ REDIRECT TO WHATSAPP
+    window.open(whatsappURL, "_blank");
+
+    // 4️⃣ RESET CART
+    cart = [];
+    updateCart();
+    locationInput.value = "";
+    cartModal.classList.add("hidden");
+  });
+}
+
+
+
+// FOOTER YEAR
+const yearElement = document.getElementById("year");
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
+
+
+// REVEAL ANIMATION (fixed)
+const revealElements = document.querySelectorAll(".reveal-up");
+
 const observer = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
+      entry.target.classList.add("is-visible");
       obs.unobserve(entry.target);
     }
   });
 }, { threshold: 0.1 });
-reveals.forEach(el => observer.observe(el));  
+
+revealElements.forEach(el => observer.observe(el));

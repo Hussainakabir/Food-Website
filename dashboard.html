@@ -1,0 +1,64 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard — Submissions</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body class="bg">
+  
+<header class="topbar">
+  <div class="top-left">
+    <div class="logo small">AD</div> <h3>Arewa Delights Dashboard</h3>
+  </div>
+  </header>
+
+<main class="container">
+  <section class="panel stats-panel glass">
+    <div class="panel-body stats" style="display: flex; justify-content: space-around; padding: 20px;">
+      <div class="stat">
+        <div class="stat-value" id="totalSubmissions">0</div>
+        <div class="stat-label">Messages</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="recent">—</div>
+        <div class="stat-label">Last Order</div>
+      </div>
+      <div class="stat-actions">
+        <button id="refreshBtn" class="btn btn-primary small">Refresh</button>
+        <button id="clearAllBtn" class="btn btn-danger small">Clear All</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="dashboard-grid">
+    <section class="panel orders-panel glass">
+      <div class="panel-head"><h2>Active Orders</h2></div>
+      <div class="panel-body"><ul id="ordersList" class="submissions-list"></ul></div>
+    </section>
+
+    <section class="panel submissions-panel glass">
+      <div class="panel-head"><h2>Messages</h2></div>
+      <div class="panel-body"><ul id="submissionsList" class="submissions-list"></ul></div>
+    </section>
+  </div>
+</main>
+
+  <footer class="footer">
+    <small>Logged in to <strong>backend-almara</strong></small>
+  </footer>
+</body>
+</html>
